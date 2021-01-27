@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Form_Bottom" width="1024" height="20" titletext="Form_Bottom" border="2px dotted">
+    <Layouts>
+      <Layout width="1024" height="20" screenid="Desktop_screen">
+        <Static id="Static00" taborder="0" text="frameBottom(1024*20)" left="30%" top="0%" bottom="0%" right="30%" textAlign="center" font="12px/normal &quot;Gulim&quot;"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

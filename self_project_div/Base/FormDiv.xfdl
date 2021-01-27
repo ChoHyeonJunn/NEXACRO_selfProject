@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Form_Div" width="1024" height="768" titletext="New Form" onload="Form_Div_onload">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Div id="Div_Top" taborder="0" text="frameTop" left="0" top="0" width="1024" height="75" url="FrameDiv::Form_Top.xfdl"/>
+        <Div id="Div_Left" taborder="1" text="frameLeft" left="0" top="75" width="200" height="673" url="FrameDiv::Form_Left.xfdl"/>
+        <Div id="Div_Bottom" taborder="2" text="frameBottom" left="0" width="1024" height="20" top="748" url="FrameDiv::Form_Bottom.xfdl"/>
+        <Div id="Div_Navi" taborder="3" text="frameNavi" left="200" top="75" width="824" height="35" url="FrameDiv::Form_Navi.xfdl"/>
+        <Div id="Div_Work" taborder="4" text="frameWork" left="200" top="110" width="824" height="638" url="FrameDiv::Form_Work.xfdl"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/************************************************************************
+ * 화면 로드 시
+ ************************************************************************/
+this.Form_Div_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+// 	// Frame Top
+// 	var objChildFrameTop = new ChildFrame();
+// 	objChildFrameTop.init("childframetop", 0, 0, 1024, 75, null, null, "FrameDiv::Form_Top.xfdl");
+// 	this.Div_Top.addChild("childframetop", objChildFrameTop);
+// 	objChildFrameTop.show();
+// 	objChildFrameTop.set_dragmovetype("none");
+// 	
+// 	// Frame Left
+// 	var objChildFrameLeft = new ChildFrame();
+// 	objChildFrameLeft.init("childframeleft", 0, 0, 225, 673, null, null, "FrameDiv::Form_Left.xfdl");
+// 	objChildFrameLeft.show();
+// 	this.Div_Left.addChild("childframeleft", objChildFrameLeft);
+// 	objChildFrameLeft.set_dragmovetype("none");
+// 	
+// 	// Frame Navi
+// 	var objChildFrameNavi = new ChildFrame();
+// 	objChildFrameNavi.init("childframenavi", 0, 0, 824, 35, null, null, "FrameDiv::Form_Navi.xfdl");
+// 	this.Div_Navi.addChild("childframenavi", objChildFrameNavi);
+// 	objChildFrameNavi.show();
+// 	objChildFrameNavi.set_dragmovetype("none");
+// 	
+// 	// FrameSet Work
+// 	var objFrameSetWork = new FrameSet();
+// 	objFrameSetWork.init("childframework", 0, 0, 824, 638, null, null, "FrameDiv::Form_Work.xfdl");
+// 	this.Div_Work.addChild("childframework", objChildFrameWork);
+// 	objFrameSetWork.show();
+// 	objFrameSetWork.set_dragmovetype("none");
+// 	
+// 	// Frame Bottom
+// 	var objChildFrameBottom = new ChildFrame();
+// 	objChildFrameBottom.init("childframebottom", 0, 0, 1024, 20, null, null, "FrameDiv::Form_Bottom.xfdl");
+// 	this.Div_Bottom.addChild("childframebottom", objChildFrameBottom);
+// 	objChildFrameBottom.show();
+// 	objChildFrameBottom.set_dragmovetype("none");
+};
+]]></Script>
+  </Form>
+</FDL>

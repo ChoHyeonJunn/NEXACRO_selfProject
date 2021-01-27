@@ -1,0 +1,29 @@
+﻿{
+	"name": "SELF_MODULE",
+	"moduletype": "component",
+	"version": "0",
+	"minnexacroversion": "",
+	"description": "",
+	"license": "",
+	"objInfo": [	
+    "SELF_MODULE/_metainfo_/CommonInfo.info",
+    "SELF_MODULE/_metainfo_/TowMonthCalendar.info"
+	],
+	"scripts": [
+    "SELF_MODULE/TowMonthCalendar.xcdl.js"
+	],
+	"designscripts": [
+    "SELF_MODULE/DesignTowMonthCalendar.js"
+	],
+	"help": "",	
+	"xcss": "SELF_MODULE/_xcss_/SELF_MODULE.xcss",
+	"images": "",	
+	"licensefiles": "",
+	"icons": "",
+	"userfolder": [
+
+	],
+	"contentseditor": [
+
+	]
+}

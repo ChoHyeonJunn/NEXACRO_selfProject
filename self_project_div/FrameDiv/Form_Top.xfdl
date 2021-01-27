@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Form_Top" width="1024" height="75" titletext="Form_Top" border="2px dotted">
+    <Layouts>
+      <Layout width="1024" height="75" screenid="Desktop_screen">
+        <Menu id="Menu00" taborder="0" left="15" top="15" bottom="15" right="15" onmenuclick="Menu00_onmenuclick" innerdataset="gds_menu" levelcolumn="MENU_LEVEL" captioncolumn="MENU_NAME" idcolumn="MENU_ID"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

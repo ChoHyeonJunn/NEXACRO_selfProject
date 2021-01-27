@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <GenInfo version="1.1">
+    <Rule>
+      <ENV rule_version="1.05"/>
+      <ADL rule_version="1.14"/>
+      <FDL rule_version="1.04"/>
+      <XCSS rule_version="1.04"/>
+      <Script rule_version="1.02"/>
+    </Rule>
+    <Info project="C:\Workspace_study_nexacro\self_project_div\" generated="C:\eGovFrame-3.8.0\workspace_study\uiadapter17_selfProject\src\main\webapp\selfprojectdiv\"><File url="typedefinition.xml" checksum="20201221162856" errormsg=""/><File url="appvariables.xml" checksum="20201221163339" errormsg=""/><File url="environment.xml" checksum="20201221162214" errormsg=""/><File url="_resource_\_theme_\default\theme.xcss" checksum="20201221162214" errormsg=""/><File url="Application_Desktop.xadl" checksum="20201221162820" errormsg=""/><File url="Base\FormDiv.xfdl" checksum="20201222093852" errormsg=""/><File url="FrameDiv\Form_Top.xfdl" checksum="20201221163046" errormsg=""/><File url="FrameDiv\Form_Left.xfdl" checksum="20201222093915" errormsg=""/><File url="FrameDiv\Form_Bottom.xfdl" checksum="20201221163001" errormsg=""/><File url="FrameDiv\Form_Navi.xfdl" checksum="20201221163038" errormsg=""/><File url="FrameDiv\Form_Work.xfdl" checksum="20201221163214" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\framework\Framework.json" checksum="20201027213714" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\resources\Resource.json" checksum="20201027213716" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\CompBase.json" checksum="20201027213712" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ComComp.json" checksum="20201027213712" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\Grid.json" checksum="20201027213712" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ListView.json" checksum="20201027213716" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\DeviceAPI.json" checksum="20201027213712" errormsg=""/></Info>
+  </GenInfo>
+</root>
