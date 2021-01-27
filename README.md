@@ -23,7 +23,7 @@
 + 로그인 페이지 구현 (session check 구현 X)
 + Nexacro MDI Frame 구현
 + Nexacro 소계 표현 Grid &amp; Tree Grid
-![self_project_Grid](https://user-images.githubusercontent.com/53424490/105945029-cff9ed80-60a7-11eb-9f68-55db80a28efc.PNG)
+![self_project_Grid](https://user-images.githubusercontent.com/53424490/105945029-cff9ed80-60a7-11eb-9f68-55db80a28efc.PNG){: width="300" height="200"}
 
 + Nexacro Grid Pagination
 ![self_project_pagination](https://user-images.githubusercontent.com/53424490/105945106-f586f700-60a7-11eb-9b2d-6d642924238f.PNG)
