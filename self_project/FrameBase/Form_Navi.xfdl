@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Form_Navi" width="824" height="35" titletext="New Form" onload="Form_Navi_onload" background="#f4f4f4" scrollbartype="none none">
+    <Layouts>
+      <Layout height="35" width="824">
+        <Tab id="Tab00" taborder="0" tabindex="0" left="20" top="10" height="100" right="20" showextrabutton="true" accessibilityrole="tabpage" onchanged="Tab00_onchanged" onextrabuttonclick="Tab00_onextrabuttonclick">
+          <Tabpages>
+            <Tabpage id="Tabpage2" text="Tabpage2"/>
+          </Tabpages>
+        </Tab>
+        <Button id="btnClose" taborder="1" top="7" width="24" height="20" right="14" background="url('imagerc::arrange/btn_MDI_screenClose_N.png') no-repeat center center transparent" border="0px none" cursor="pointer" onmouseenter="btnArrange_mouseEvent" onmouseleave="btnArrange_mouseEvent" enableevent="true" onclick="btnClose_onclick"/>
+        <Button id="btnArrangeVertical" taborder="2" top="7" width="24" height="20" right="43" background="url('imagerc::arrange/btn_MDI_screenV_N.png') no-repeat center center transparent" border="0px none" cursor="pointer" onmouseenter="btnArrange_mouseEvent" onmouseleave="btnArrange_mouseEvent" onlbuttondown="btnArrange_mouseEvent" onlbuttonup="btnArrange_mouseEvent" initvalueid="vertical" onclick="btnArrange_onclick" enableevent="true"/>
+        <Button id="btnArrangeHorizontal" taborder="3" top="7" width="24" height="20" right="72" background="url('imagerc::arrange/btn_MDI_screenH_N.png') no-repeat center center transparent" border="0px none" cursor="pointer" onmouseenter="btnArrange_mouseEvent" onmouseleave="btnArrange_mouseEvent" onlbuttondown="btnArrange_mouseEvent" onlbuttonup="btnArrange_mouseEvent" initvalueid="horizontal" onclick="btnArrange_onclick" enableevent="true"/>
+        <Button id="btnArrangeCascade" taborder="4" top="7" width="24" height="20" right="101" background="url('imagerc::arrange/btn_MDI_screenPop_N.png') no-repeat center center transparent" border="0px none" cursor="pointer" onmouseenter="btnArrange_mouseEvent" onmouseleave="btnArrange_mouseEvent" onlbuttondown="btnArrange_mouseEvent" onlbuttonup="btnArrange_mouseEvent" initvalueid="cascade" onclick="btnArrange_onclick" enableevent="true"/>
+        <Button id="btnArrangeMax" taborder="5" top="7" width="24" height="20" right="130" background="url('imagerc::arrange/btn_MDI_screenMax_N.png') no-repeat center center transparent" border="0px none" cursor="pointer" onmouseenter="btnArrange_mouseEvent" onmouseleave="btnArrange_mouseEvent" onlbuttondown="btnArrange_mouseEvent" onlbuttonup="btnArrange_mouseEvent" initvalueid="max" onclick="btnArrange_onclick" enableevent="true"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.application = null;
+
+/************************************************************************
+ * event : 페이지 로드
+ ************************************************************************/
+this.Form_Navi_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.application = nexacro.getApplication();
+	this.Tab00.removeTabpage(0);
+	this.fn_visibleArrangeBtn();
+};
+
+/************************************************************************
+ * event : 탭 페이지 변경 이벤트
+ ************************************************************************/
+this.Tab00_onchanged = function(obj:nexacro.Tab,e:nexacro.TabIndexChangeEventInfo)
+{
+	var MENU_ID = obj.tabpages[e.postindex].name;
+	this.application.WorkFrame[MENU_ID].form.setFocus();
+	
+	// leftFrame 에 있는 그리드 메뉴 포커스 변경
+	this.application.LeftFrame.form.fn_setGridFocus(MENU_ID);
+	
+	// topFrame 에 있는 버튼 색 변경
+	var menuDs = this.application.gds_menu;	
+	var Row = menuDs.findRow("MENU_ID", MENU_ID);
+	var UP_MENU_ID = menuDs.getColumn(Row, "UP_MENU_ID");
+	var upRow = menuDs.findRow("MENU_ID", UP_MENU_ID);
+	var UP_UP_MENU_ID = menuDs.getColumn(upRow, "UP_MENU_ID");
+	
+	this.application.TopFrame.form.fn_setBtnColor(UP_UP_MENU_ID);
+};
+
+/************************************************************************
+ * event : 엑스트라버튼(삭제) 클릭 이벤트
+ ************************************************************************/
+this.Tab00_onextrabuttonclick = function(obj:nexacro.Tab,e:nexacro.TabMouseEventInfo)
+{
+	var MENU_ID = obj.tabpages[e.index].name;
+	
+	obj.removeTabpage(e.index);
+	this.application.WorkFrame[MENU_ID].form.close();
+	this.fn_visibleArrangeBtn();
+};
+
+/************************************************************************
+ * event : 전체삭제 버튼 클릭
+ ************************************************************************/
+this.btnClose_onclick = function(obj:nexacro.Button,e:nexacro.MouseEventInfo)
+{
+	var arrWorkFrame = this.application.WorkFrame.all;
+	for(var i=arrWorkFrame.length-1; i>=0; i--) 
+	{
+		arrWorkFrame[i].form.close();
+		this.Tab00.removeTabpage(i);
+	}
+	this.fn_visibleArrangeBtn();
+	this.application.BottomFrame.form.fn_showNaviText('');
+};
+
+// function : 탭 추가
+this.fn_AddTabPage = function(MENU_ID, MENU_NAME)
+{
+	this.Tab00.insertTabpage(MENU_ID, -1, "", MENU_NAME);
+	this.fn_visibleArrangeBtn();
+}
+
+// function : 탭 삭제
+this.fn_DeleteTabpage = function(MENU_ID)
+{
+	var nCnt = this.Tab00.getTabpageCount();	
+	for(var i=0; i<nCnt; i++)
+	{	
+		if(this.Tab00.tabpages[i].name == MENU_ID)
+		{
+			this.Tab00.removeTabpage(i);
+			return;
+		}
+	}	
+	this.fn_visibleArrangeBtn();
+}
+
+// function : 탭 활성화
+this.fn_ActiveTabPage = function(MENU_ID)
+{
+	var nCnt = this.Tab00.getTabpageCount();	
+	for(var i=0; i<nCnt; i++)
+	{	
+		if(this.Tab00.tabpages[i].name == MENU_ID)
+		{
+			this.Tab00.set_tabindex(i);
+			
+			return;
+		}
+	}
+}
+
+// function : 페이지의 갯수가 0이면 arrange 버튼 visible false : true
+this.fn_visibleArrangeBtn = function()
+{
+	var arrWorkFrame = this.application.WorkFrame.all;
+	
+	if(arrWorkFrame.length == 0)
+	{
+		this.btnArrangeMax.set_visible(false);
+		this.btnArrangeCascade.set_visible(false);
+		this.btnArrangeHorizontal.set_visible(false);
+		this.btnArrangeVertical.set_visible(false);
+		this.btnClose.set_visible(false);
+	}
+	else
+	{
+		this.btnArrangeMax.set_visible(true);
+		this.btnArrangeCascade.set_visible(true);
+		this.btnArrangeHorizontal.set_visible(true);
+		this.btnArrangeVertical.set_visible(true);
+		this.btnClose.set_visible(true);
+	}
+}
+
+/************************************************************************
+ * event : arrange 버튼 클릭
+ ************************************************************************/
+this.btnArrange_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var arrWorkFrame = this.application.WorkFrame.all;
+
+	// initvalueid 속성에 적용해 놓은 arrange 이름을 사용해 arrange 조절
+	if(obj.initvalueid == 'max')
+	{
+		var tabIdx = this.Tab00.tabindex;
+		for(var i=arrWorkFrame.length-1; i>=0; i--) 
+		{
+			arrWorkFrame[i].set_showtitlebar(false);
+			arrWorkFrame[i].set_openstatus("maximize");
+			arrWorkFrame[i].set_border('');
+		}
+		this.Tab00.set_tabindex(tabIdx);
+	}
+	else 
+	{
+		this.application.WorkFrame.arrange(obj.initvalueid);	
+		for(var i=arrWorkFrame.length-1; i>=0; i--) 
+		{
+			arrWorkFrame[i].set_showtitlebar(true);
+			arrWorkFrame[i].set_border('1px solid gray');
+		}		
+	}
+	
+	// arrange 버튼 이미지 조절	
+	if(this.btnArrangeMax.enableevent == false) this.btnArrangeMax.set_enableevent(true);
+	if(this.btnArrangeCascade.enableevent == false) this.btnArrangeCascade.set_enableevent(true);
+	if(this.btnArrangeHorizontal.enableevent == false) this.btnArrangeHorizontal.set_enableevent(true);
+	if(this.btnArrangeVertical.enableevent == false) this.btnArrangeVertical.set_enableevent(true);
+	 
+	this.fn_changeArrangeImg(this.btnArrangeMax, 'N');
+	this.fn_changeArrangeImg(this.btnArrangeCascade, 'N');
+	this.fn_changeArrangeImg(this.btnArrangeHorizontal, 'N');
+	this.fn_changeArrangeImg(this.btnArrangeVertical, 'N');
+	 
+	this.fn_changeArrangeImg(obj, 'F');
+	obj.set_enableevent(false);
+};
+
+/************************************************************************
+ * event : arrange 버튼 마우스 이벤트
+ ************************************************************************/
+this.btnArrange_mouseEvent = function(obj:nexacro.Button,e:nexacro.MouseEventInfo)
+{	
+	if (e.eventid == 'onmouseenter')
+		this.fn_changeArrangeImg(obj, 'O');
+	else if (e.eventid == 'onmouseleave')
+		this.fn_changeArrangeImg(obj, 'N');
+	else if (e.eventid == 'onlbuttondown')
+		this.fn_changeArrangeImg(obj, 'P');
+	else if (e.eventid == 'onlbuttonup')
+		this.fn_changeArrangeImg(obj, 'O');
+};
+
+// functoin : arrange 버튼 배경 이미지 변경
+this.fn_changeArrangeImg = function(pObj, pOption)
+{
+	var sBackground = pObj.background;
+	var Idx = sBackground.indexOf('.png');
+	 
+	pObj.set_background(sBackground.replaceAt(Idx-1, pOption));
+}
+
+// function : 특정 인덱스의 문자열 변경
+String.prototype.replaceAt = function(index, character)
+{
+    return this.substr(0, index) + character + this.substr(index+character.length);
+}
+
+
+]]></Script>
+  </Form>
+</FDL>

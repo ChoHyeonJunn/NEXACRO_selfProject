@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="chart" width="1280" height="1150" titletext="New Form" onload="chart_onload">
+    <Layouts>
+      <Layout height="1150" width="1280">
+        <Static id="Line" taborder="0" top="120" height="95" left="75" onclick="Static_onclick" background="url('imagerc::rChart/line.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="Column" taborder="1" top="120" height="95" background="url('imagerc::rChart/column.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" text="" width="142" left="250"/>
+        <Static id="Area" taborder="2" left="609" top="120" height="95" background="url('imagerc::rChart/area.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142"/>
+        <Static id="Pie" taborder="3" top="120" height="95" background="url('imagerc::rChart/pie.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142" left="786"/>
+        <Static id="Bubble" taborder="4" left="75" top="265" height="95" background="url('imagerc::rChart/bubble.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142"/>
+        <Static id="Plot" taborder="5" left="250" top="265" height="95" background="url('imagerc::rChart/plot.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142"/>
+        <Static id="FromTo" taborder="6" left="609" top="265" height="95" background="url('imagerc::rChart/from_to.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142"/>
+        <Static id="Radar" taborder="7" top="265" height="95" background="url('imagerc::rChart/radar.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142" left="786"/>
+        <Static id="Target" taborder="8" left="75" top="410" height="95" background="url('imagerc::rChart/target.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142"/>
+        <Static id="History" taborder="9" left="250" top="410" height="95" background="url('imagerc::rChart/history.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142"/>
+        <Static id="Scroll" taborder="10" left="609" top="410" height="95" background="url('imagerc::rChart/scroll.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142"/>
+        <Static id="Equalizer" taborder="11" top="410" height="95" background="url('imagerc::rChart/equalizer.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142" left="786"/>
+        <Static id="BrokenAxis" taborder="12" left="75" top="555" height="95" background="url('imagerc::rChart/broken.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142"/>
+        <Static id="Image" taborder="13" left="250" top="555" height="95" background="url('imagerc::rChart/image.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142"/>
+        <Static id="Wing" taborder="14" left="609" top="555" height="95" background="url('imagerc::rChart/wing.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142"/>
+        <Static id="WindRose" taborder="15" top="555" height="95" background="url('imagerc::rChart/wind_rose.jpg') no-repeat center" cursor="pointer" onclick="Static_onclick" width="142" left="786"/>
+        <Static id="Static18" taborder="16" text="Line" left="75" top="225" height="20" textAlign="center" width="142"/>
+        <Static id="Static19" taborder="17" text="Column" left="250" top="225" height="20" textAlign="center" width="142"/>
+        <Static id="Static20" taborder="18" text="Area" left="609" top="225" height="20" textAlign="center" width="142"/>
+        <Static id="Static21" taborder="19" text="Pie" top="225" height="20" textAlign="center" width="142" left="786"/>
+        <Static id="Static22" taborder="20" text="Bubble" left="75" top="370" height="20" textAlign="center" width="142"/>
+        <Static id="Static23" taborder="21" text="Plot" left="250" top="370" height="20" textAlign="center" width="142"/>
+        <Static id="Static24" taborder="22" text="From - To" left="609" top="370" height="20" textAlign="center" width="142"/>
+        <Static id="Static25" taborder="23" text="Radar" top="370" height="20" textAlign="center" width="142" left="786"/>
+        <Static id="Static26" taborder="24" text="Target vs Actual" left="75" top="515" height="20" textAlign="center" width="142"/>
+        <Static id="Static27" taborder="25" text="History" left="250" top="515" height="20" textAlign="center" width="142"/>
+        <Static id="Static29" taborder="26" text="Equalizer" top="515" height="20" textAlign="center" width="142" left="786"/>
+        <Static id="Static28" taborder="27" text="Scroll" left="609" top="515" height="20" textAlign="center" width="142"/>
+        <Static id="Static30" taborder="28" text="BrokenAxis" left="75" top="660" height="20" textAlign="center" width="142"/>
+        <Static id="Static31" taborder="29" text="Image" left="250" top="660" height="20" textAlign="center" width="142"/>
+        <Static id="Static32" taborder="30" text="Wing" left="609" top="660" height="20" textAlign="center" width="142"/>
+        <Static id="Static33" taborder="31" text="WindRose" top="660" height="20" textAlign="center" width="142" left="786"/>
+        <Static id="Bar" taborder="32" onclick="Static_onclick" left="428" top="120" height="95" background="url('imagerc::rChart/bar.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="Combination" taborder="33" onclick="Static_onclick" left="428" top="265" height="95" background="url('imagerc::rChart/combination.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="RealTime" taborder="34" onclick="Static_onclick" left="428" top="410" height="95" background="url('imagerc::rChart/realtime.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="ImageMatrix" taborder="35" onclick="Static_onclick" left="428" top="555" height="95" background="url('imagerc::rChart/image_matrix.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="Static00_00" taborder="36" text="Bar" left="428" top="225" height="20" textAlign="center" width="142"/>
+        <Static id="Static01" taborder="37" text="Combination" left="428" top="370" height="20" textAlign="center" width="142"/>
+        <Static id="Static02" taborder="38" text="RealTime" left="428" top="515" height="20" textAlign="center" width="142"/>
+        <Static id="Static03" taborder="39" text="ImageMatrix" left="428" top="660" height="20" textAlign="center" width="142"/>
+        <Static id="Candlestick" taborder="40" onclick="Static_onclick" left="75" top="700" height="95" background="url('imagerc::rChart/candlestick.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="TreeMap" taborder="41" onclick="Static_onclick" left="250" top="700" height="95" background="url('imagerc::rChart/treemap.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="Matrix" taborder="42" onclick="Static_onclick" left="609" top="700" height="95" background="url('imagerc::rChart/matrix.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="OverlayBubble" taborder="43" onclick="Static_onclick" top="700" height="95" background="url('imagerc::rChart/overlaybubble.jpg') no-repeat center" cursor="pointer" width="142" left="786"/>
+        <Static id="Pyramid" taborder="44" onclick="Static_onclick" left="75" top="845" height="95" background="url('imagerc::rChart/pyramid.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="Histogram" taborder="45" onclick="Static_onclick" left="250" top="845" height="95" background="url('imagerc::rChart/histogram.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="ErrorBar" taborder="46" onclick="Static_onclick" left="609" top="845" height="95" background="url('imagerc::rChart/error_bar.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="BoxPlot" taborder="47" onclick="Static_onclick" top="845" height="95" background="url('imagerc::rChart/box_plot.jpg') no-repeat center" cursor="pointer" width="142" left="786"/>
+        <Static id="Slide" taborder="48" onclick="Static_onclick" left="75" top="990" height="95" background="url('imagerc::rChart/slide.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="Motion" taborder="49" onclick="Static_onclick" left="250" top="990" height="95" background="url('imagerc::rChart/motion.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="SimpleGauge" taborder="50" onclick="Static_onclick" left="609" top="990" height="95" background="url('imagerc::rChart/simple_gauge.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="Gauge" taborder="51" onclick="Static_onclick" top="990" height="95" background="url('imagerc::rChart/gauge.jpg') no-repeat center" cursor="pointer" width="142" left="786"/>
+        <Static id="Static04" taborder="52" text="Candlestick" left="75" top="805" height="20" textAlign="center" width="142"/>
+        <Static id="Static06" taborder="53" text="TreeMap" left="250" top="805" height="20" textAlign="center" width="142"/>
+        <Static id="Static07" taborder="54" text="Matrix" left="609" top="805" height="20" textAlign="center" width="142"/>
+        <Static id="Static08" taborder="55" text="OverlayBubble" top="805" height="20" textAlign="center" width="142" left="786"/>
+        <Static id="Static09" taborder="56" text="Pyramid" left="75" top="950" height="20" textAlign="center" width="142"/>
+        <Static id="Static10" taborder="57" text="Histogram" left="250" top="950" height="20" textAlign="center" width="142"/>
+        <Static id="Static11" taborder="58" text="ErrorBar" left="609" top="950" height="20" textAlign="center" width="142"/>
+        <Static id="Static12" taborder="59" text="BoxPlot" top="950" height="20" textAlign="center" width="142" left="786"/>
+        <Static id="Static13" taborder="60" text="Slide" left="75" top="1095" height="20" textAlign="center" width="142"/>
+        <Static id="Static14" taborder="61" text="Motion" left="250" top="1095" height="20" textAlign="center" width="142"/>
+        <Static id="Static15" taborder="62" text="SimpleGauge" left="609" top="1095" height="20" textAlign="center" width="142"/>
+        <Static id="Static16" taborder="63" text="Gauge" top="1095" height="20" textAlign="center" width="142" left="786"/>
+        <Static id="WordCloud" taborder="64" onclick="Static_onclick" left="428" top="700" height="95" background="url('imagerc::rChart/word_cloud.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="Vector" taborder="65" onclick="Static_onclick" left="428" top="845" height="95" background="url('imagerc::rChart/vector.jpg') no-repeat center" cursor="pointer" width="142"/>
+        <Static id="RealTimePremium" taborder="66" onclick="Static_onclick" left="428" top="990" background="url('imagerc::rChart/realtime_premium.jpg') no-repeat center" cursor="pointer" height="95" width="142"/>
+        <Static id="Static17" taborder="67" text="WordCloud" left="428" top="805" height="20" textAlign="center" width="142"/>
+        <Static id="Static34" taborder="68" text="Vector" left="428" top="950" height="20" textAlign="center" width="142"/>
+        <Static id="Static35" taborder="69" text="RealTime-Premium" left="428" top="1095" height="20" textAlign="center" width="142"/>
+        <Static id="Static00_01" taborder="70" text="rChart" left="33" top="26" width="1214" height="34" font="normal 700 16pt/normal &quot;Arial&quot;"/>
+        <Static id="Static02_00" taborder="71" text="다양한 형태의 팝업 호출. 넥사크로플랫폼에서는 모달/모달리스 형태로 호출할 수 있는 API가 제공되고 타이틀바, 리사이즈 등의 옵션을 선택할 수 있습니다." left="35" top="60" width="1214" height="30"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.application = null;
+
+/*
+ *	event : 페이지 온로드
+ */
+ this.chart_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.application = nexacro.getApplication();
+};
+
+/************************************************************************
+ * event : 차트 이미지 클릭
+ ************************************************************************/
+this.Static_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	this.fn_popupModel("rChartPop", "rChart::chartPop.xfdl", {chartType: obj.name});
+};
+
+
+// function : 모달창
+this.fn_popupModel = function(pID, pURL, pObjParam)
+{	
+	var widthValue = 1024,
+		heightValue = 700,
+		nLeft = Math.round((this.application.mainframe.width - widthValue) / 2),
+		nTop  = Math.round((this.application.mainframe.height - heightValue) / 2);
+	
+	var objChildFrame = new ChildFrame(pID
+									  , nLeft
+									  , nTop
+									  , 1024
+									  , 700
+									  , null
+									  , null
+									  , pURL);
+	
+	objChildFrame.set_showtitlebar(false);
+	objChildFrame.set_showstatusbar(false);
+	objChildFrame.set_resizable(false);
+	objChildFrame.set_autosize(false);  
+	objChildFrame.set_dragmovetype("none");
+				  
+	objChildFrame.showModal(this.getOwnerFrame()
+	                      , pObjParam
+						  , this
+						  , "fn_popupCallback");
+}
+
+// function : 모달창 콜백
+this.fn_popupCallback = function(strPopupID, strReturn)
+{
+
+};
+]]></Script>
+  </Form>
+</FDL>

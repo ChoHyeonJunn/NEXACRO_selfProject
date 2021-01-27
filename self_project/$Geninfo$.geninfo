@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <GenInfo version="1.1">
+    <Rule>
+      <ENV rule_version="1.05"/>
+      <ADL rule_version="1.14"/>
+      <FDL rule_version="1.04"/>
+      <XCSS rule_version="1.04"/>
+      <Script rule_version="1.02"/>
+    </Rule>
+    <Info project="C:\Workspace_study_nexacro\self_project\" generated="C:\eGovFrame-3.8.0\workspace_study\uiadapter17_selfProject\src\main\webapp\selfproject\">
+      <File url="environment.xml" checksum="20210104112847" errormsg=""/>
+      <File url="environment.xml" checksum="20210104112847" errormsg=""/>
+      <File url="environment.xml" checksum="20210104112847" errormsg=""/>
+      <File url="typedefinition.xml" checksum="20210121193906" errormsg=""/>
+      <File url="appvariables.xml" checksum="20210121192525" errormsg=""/>
+      <File url="FrameBase\Form_Navi.xfdl" checksum="20210121214702" errormsg=""/>
+      <File url="Application_Desktop.xadl" checksum="20210114141111" errormsg=""/>
+      <File url="_resource_\_xcss_\sampleCss.xcss" checksum="20210119125621" errormsg=""/>
+      <File url="_resource_\_theme_\default\theme.xcss" checksum="20201221094933" errormsg=""/>
+      <File url="FrameBase\Form_Bottom.xfdl" checksum="20210111143143" errormsg=""/>
+      <File url="FrameBase\Form_Left.xfdl" checksum="20210119131738" errormsg=""/>
+      <File url="FrameBase\Form_Login.xfdl" checksum="20210121210405" errormsg=""/>
+      <File url="FrameBase\Form_Top.xfdl" checksum="20210119130547" errormsg=""/>
+      <File url="FrameBase\Form_Work.xfdl" checksum="20210111142938" errormsg=""/>
+      <File url="Form\Form_1_1_1.xfdl" checksum="20201221144045" errormsg=""/>
+      <File url="Form\Form_1_1_2.xfdl" checksum="20201221144057" errormsg=""/>
+      <File url="Form\Form_1_2_1.xfdl" checksum="20201221144210" errormsg=""/>
+      <File url="Form\Form_3_1_1.xfdl" checksum="20201221144159" errormsg=""/>
+      <File url="Form\Form_3_1_2.xfdl" checksum="20201221144340" errormsg=""/>
+      <File url="uiadapter17\crud.xfdl" checksum="20210121200824" errormsg=""/>
+      <File url="uiadapter17\file.xfdl" checksum="20210122090607" errormsg=""/>
+      <File url="Comp\Comp_Div_Popup.xfdl" checksum="20210122000100" errormsg=""/>
+      <File url="Comp\Comp_Div_Popup_Sub.xfdl" checksum="20201230104905" errormsg=""/>
+      <File url="Comp\Comp_Grid.xfdl" checksum="20210121200933" errormsg=""/>
+      <File url="rChart\chart.xfdl" checksum="20210120150012" errormsg=""/>
+      <File url="rChart\chartPop.xfdl" checksum="20210105173313" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\framework\Framework.json" checksum="20201027213714" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\resources\Resource.json" checksum="20201027213716" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\CompBase.json" checksum="20201027213712" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ComComp.json" checksum="20201027213712" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\Grid.json" checksum="20201027213712" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ListView.json" checksum="20201027213716" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\DeviceAPI.json" checksum="20201027213712" errormsg=""/>
+      <File url="Comp\Comp_Grid_Pagination.xfdl" checksum="20210121201334" errormsg=""/>
+      <File url="_resource_\_xcss_\compositeModule.xcss" checksum="20210114142039" errormsg=""/>
+      <File url="Comp\Comp_Grid_Personalization.xfdl" checksum="20210121201504" errormsg=""/>
+      <File url="_extlib_\compositeModule.json" checksum="20210114162331" errormsg=""/>
+      <File url="_extlib_\util.json" checksum="20201207143039" errormsg=""/>
+      <File url="Comp\Comp_Module_Developer.xfdl" checksum="20210119175917" errormsg=""/>
+      <File url="Comp\Comp_Module_FromToCalendar.xfdl" checksum="20210122001029" errormsg=""/>
+      <File url="_extlib_\SELF_MODULE.json" checksum="20210120104813" errormsg=""/>
+      <File url="rChart\chartgrid.xfdl" checksum="20210121202148" errormsg=""/>
+      <File url="FrameBase\rMateChartH5.xfdl" checksum="20210121193933" errormsg=""/>
+      <File url="lib\rMateChartH5.xjs" checksum="20201207143040" errormsg=""/>
+      <File url="lib\rMateChartH5License.xjs" checksum="20210121200455" errormsg=""/>
+    </Info>
+  </GenInfo>
+</root>

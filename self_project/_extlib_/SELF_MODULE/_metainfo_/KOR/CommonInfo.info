@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MetaInfo version="2.0">
+  <EnumInfo id="ColorTheme">
+    <Enum name="orange" description="'orange' color 테마"/>
+    <Enum name="purple" description="'purple' color 테마"/>
+  </EnumInfo>
+</MetaInfo>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Comp_Module_FromToCalendar" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <TextArea id="txtResult" taborder="0" top="120" width="45%" right="75" bottom="20"/>
+        <TowMonthCalendar id="TowMonthCalendar00" taborder="1" left="75" top="120" width="45%" height="33" onchanged="TowMonthCalendar00_onchanged"/>
+        <Static id="Static00" taborder="2" text="Module Developer - From To Calendar" left="33" top="26" width="1214" height="34" font="normal 700 16pt/normal &quot;Arial&quot;"/>
+        <Static id="Static02" taborder="3" text="넥사크로 모듈 디벨로퍼는 넥사크로 플랫폼 기반의 사용자 모듈 작성을 지원하는 개발 도구입니다. 기본 메뉴 구성과 사용법은 넥사크로 스튜디오와 비슷합니다. &#13;&#10;기존 컴포넌트를 조합해 복합적인 기능을 제공하는 컴포지트 컴포넌트와 특정 컴포넌트를 상속해서 만드는 사용자 컴포넌트 개발을 지원합니다.&#13;&#10;&#13;&#10;" left="35" top="60" width="1214" height="50"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+
+/************************************************************************
+ * event : 페이지 온로드
+ ************************************************************************/
+this.Form_Work_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.txtResult.set_value(
+		"시작일 : \n" +
+		"종료일 : \n" +
+		"기간 : 일"
+	)
+};
+
+/************************************************************************
+ * event : FromToCalendar 온체인지
+ ************************************************************************/
+this.showEvent = "";
+this.TowMonthCalendar00_onchanged = function(obj:nexacro.TowMonthCalendar, e:nexacro.ChangeEventInfo)
+{
+	var fromValue = (this.TowMonthCalendar00.fromValue != undefined) ? this.TowMonthCalendar00.fromValue : '';
+	var toValue = (this.TowMonthCalendar00.toValue != undefined) ? this.TowMonthCalendar00.toValue : '';
+	var dayCount;
+	if(this.TowMonthCalendar00.fromValue != '' && this.TowMonthCalendar00.toValue != ''){
+		dayCount = this.TowMonthCalendar00.getDayCount();
+	}else {
+		dayCount = '';
+	}
+
+	this.showEvent += "FromToCalendar onchanged event \n";
+	this.txtResult.set_value(
+		"시작일 : " + fromValue + "\n" +
+		"종료일 : " + toValue  + "\n" + 
+		"기간 : " + (dayCount + 1) + "일\n\n" + 
+		this.showEvent
+	)
+};
+]]></Script>
+  </Form>
+</FDL>

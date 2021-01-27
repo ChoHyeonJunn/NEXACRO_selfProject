@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Form_Top" width="1024" height="75" titletext="Form_Top" onload="Form_Top_onload" scrolltype="none" background="url('imagerc::img_top_logo.png') no-repeat 3% center" border="0px none,0px none,1px solid black">
+    <Layouts>
+      <Layout width="1024" height="75" screenid="Desktop_screen"/>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.application = null;
+
+/************************************************************************
+ * event : 페이지 로드
+ ************************************************************************/
+this.Form_Top_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.application = nexacro.getApplication();
+	this.createMenuButton();
+};
+
+// function : 메뉴 버튼 생성
+this.buttonList = [];
+this.createMenuButton = function()
+{
+	var left=230, top=15, width=130, height=45, gap=5;
+	
+	this.application.gds_menu.filter("MENU_LEVEL==0");
+	
+	for (var i=0, len=this.application.gds_menu.rowcount; i<len; i++) {
+		var menuId = this.application.gds_menu.getColumn(i, "MENU_ID"),
+			id = menuId,
+			button = new Button(id, left, top, width, height, null, null);
+		
+		/*button.set_cssclass("btn_TF_topNav");*/
+		button.set_text(this.application.gds_menu.getColumn(i, "MENU_NAME"));
+		button.set_cssclass("bg_sample");
+		button.set_id(menuId);
+		button.set_visible(true);
+		button.menuId = menuId;
+		button.addEventHandler("onclick", this.btnMenu_onclick, this);
+		this.addChild(id, button);
+		button.show();
+		
+		left += width + gap;
+		this.buttonList.push(button);
+	}
+	
+	this.application.gds_menu.filter("");
+};
+
+/************************************************************************
+ * event : 메뉴 버튼 클릭 - left 메뉴 생성
+ ************************************************************************/
+this.btnMenu_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{		
+	// 버튼 색 변경
+	this.fn_setBtnColor(obj.id);
+	
+	// left 메뉴 셋팅 함수 호출
+	this.application.LeftFrame.form.fn_setLeftMenu(obj.menuId);
+};
+
+this.fn_setBtnColor = function(pMENU_ID)
+{
+	// 버튼 색 변경
+	for(var i=0; i<this.buttonList.length; i++){
+		if(this.buttonList[i].id == pMENU_ID){
+			this.buttonList[i].set_background("#6163ef");
+			this.buttonList[i].set_color("#ffffff");
+		}
+		else{
+			this.buttonList[i].set_background("#ffffff");
+			this.buttonList[i].set_color("#555555");
+		}
+	}
+}]]></Script>
+  </Form>
+</FDL>

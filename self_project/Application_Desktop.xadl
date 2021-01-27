@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ADL version="2.0">
+  <Application id="Application_Desktop" screenid="Desktop_screen" onload="Application_onload">
+    <Layout>
+      <MainFrame id="mainframe" showtitlebar="true" showstatusbar="true" width="1024" height="768" titletext="MidLeftFrame">
+        <VFrameSet id="VFrameSet00" separatesize="*,0,0,0,0">
+          <Frames>
+            <ChildFrame id="LoginFrame" formurl="FrameBase::Form_Login.xfdl" showtitlebar="false"/>
+            <ChildFrame id="TopFrame" showtitlebar="false" showstatusbar="false" formurl="FrameBase::Form_Top.xfdl"/>
+            <HFrameSet id="HFrameSet00" separatesize="225,*">
+              <Frames>
+                <ChildFrame id="LeftFrame" showtitlebar="false" showstatusbar="false" formurl="FrameBase::Form_Left.xfdl"/>
+                <VFrameSet id="VFrameSet01" separatesize="35,*">
+                  <Frames>
+                    <ChildFrame id="NaviFrame" formurl="FrameBase::Form_Navi.xfdl" showcascadetitletext="true" topmost="true" dragmovetype="none" showtitlebar="false"/>
+                    <FrameSet id="WorkFrame" background="url('imagerc::img_WF_mainPR01.png') no-repeat center center #f4f4f4"/>
+                  </Frames>
+                </VFrameSet>
+              </Frames>
+            </HFrameSet>
+            <ChildFrame id="BottomFrame" showtitlebar="false" showstatusbar="false" formurl="FrameBase::Form_Bottom.xfdl"/>
+          </Frames>
+        </VFrameSet>
+      </MainFrame>
+    </Layout>
+    <Style url="xcssrc::sampleCss.xcss"/>
+    <Style url="xcssrc::compositeModule.xcss"/>
+  </Application>
+  <Script type="xscript5.1"><![CDATA[this.VFrameSet00;
+this.HFrameSet00;
+this.VFrameSet01;
+this.WorkFrame;
+this.TopFrame;
+this.LeftFrame;
+this.NaviFrame;
+this.BottomFrame;
+this.LoginFrame;
+
+this.Application_onload = function(obj:nexacro.Application, e:nexacro.LoadEventInfo)
+{
+	this.VFrameSet00 = this.mainframe.VFrameSet00;
+		this.LoginFrame = this.mainframe.VFrameSet00.LoginFrame;
+		this.TopFrame = this.mainframe.VFrameSet00.TopFrame;
+		this.HFrameSet00 = this.mainframe.VFrameSet00.HFrameSet00;
+			this.LeftFrame = this.mainframe.VFrameSet00.HFrameSet00.LeftFrame;
+			this.VFrameSet01 = this.mainframe.VFrameSet00.HFrameSet00.VFrameSet01;	
+				this.NaviFrame = this.mainframe.VFrameSet00.HFrameSet00.VFrameSet01.NaviFrame;
+				this.WorkFrame = this.mainframe.VFrameSet00.HFrameSet00.VFrameSet01.WorkFrame;					
+		this.BottomFrame = this.mainframe.VFrameSet00.BottomFrame;
+}]]></Script>
+</ADL>

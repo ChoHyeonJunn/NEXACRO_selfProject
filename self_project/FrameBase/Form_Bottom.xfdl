@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Form_Bottom" width="1024" height="20" titletext="Form_Bottom" background="#ffffff" onload="Form_Bottom_onload">
+    <Layouts>
+      <Layout width="1024" height="20" screenid="Desktop_screen">
+        <Static id="staNavi" taborder="0" left="10" top="0" height="100%" right="0"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.application = null;
+/************************************************************************
+ * event : 페이지 온로드
+ ************************************************************************/
+this.Form_Bottom_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.application = nexacro.getApplication();
+};
+
+// function : bottom 에 네비게이션 경로 표현
+this.fn_showNaviText = function(pNaviText)
+{
+	this.staNavi.set_text(pNaviText);
+}]]></Script>
+  </Form>
+</FDL>

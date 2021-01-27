@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Form_Work" width="824" height="638" titletext="Form_Work" onload="Form_Work_onload" onactivate="Form_Work_onactivate" onclose="Form_Work_onclose">
+    <Layouts>
+      <Layout width="824" height="638" screenid="Desktop_screen">
+        <Div id="Div00" taborder="0" text="Div00" left="0" top="0" right="0" bottom="0"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.application = null;
+this.MENU_ID = null;
+this.MENU_NAME = null;
+this.FORM_URL = null;
+this.TITLE_TEXT = null;
+
+/************************************************************************
+ * event : 페이지 로드
+ ************************************************************************/
+this.Form_Work_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.application = nexacro.getApplication();	
+	var objOwnerFrame = this.getOwnerFrame();
+
+	this.MENU_ID   = objOwnerFrame.param.MENU_ID;	// 3
+	this.MENU_NAME = objOwnerFrame.param.MENU_NAME;	// Form 1_1_1
+	this.FORM_URL = objOwnerFrame.param.FORM_URL;	// Form::Form_1_1_1.xfdl
+	this.TITLE_TEXT = objOwnerFrame.param.TITLE_TEXT;	// menu > sub_menu > menu_name
+	
+	this.Div00.set_url(this.FORM_URL);
+	this.Div00.form.resetScroll();
+};
+
+/************************************************************************
+ * event : 페이지 활성화시
+ ************************************************************************/
+this.Form_Work_onactivate = function(obj:nexacro.Form,e:nexacro.ActivateEventInfo)
+{
+	// 탭페이지 활성화 function 호출
+	this.application.NaviFrame.form.fn_ActiveTabPage(this.MENU_ID);
+	// bottom 영역에 메뉴 navi 표시
+	this.application.BottomFrame.form.fn_showNaviText(this.TITLE_TEXT);
+    this.Div00.form.resetScroll();
+	return;	
+};
+
+/************************************************************************
+ * event : 페이지 삭제시 
+ ************************************************************************/
+this.Form_Work_onclose = function(obj:nexacro.Form,e:nexacro.CloseEventInfo)
+{
+	// 탭페이지 삭제 function 호출
+	this.application.NaviFrame.form.fn_DeleteTabpage(this.MENU_ID);
+};
+
+]]></Script>
+  </Form>
+</FDL>

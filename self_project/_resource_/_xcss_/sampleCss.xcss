@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XCSS version="1.0"><![CDATA[.Grid
+{
+}
+.Grid .body
+{
+}
+.Grid .body .row
+{
+}
+.Grid .body .row .cell.bg_summary
+{
+	background : #fdfbe5;
+	color : #333333;
+	font : normal bold 10pt/normal "Arial";
+}
+]]></XCSS>

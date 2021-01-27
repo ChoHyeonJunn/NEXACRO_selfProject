@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="crud" width="1280" height="720" titletext="New Form" onload="Form_Work_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Combo id="Combo00" taborder="0" text="id" left="75" top="120" width="112" height="20" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" value="ID" index="0">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">ID</Col>
+                <Col id="datacolumn">id</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">NAME</Col>
+                <Col id="datacolumn">name</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Edit id="Edit00" taborder="1" left="190" top="120" width="230" height="20"/>
+        <Button id="Button05" taborder="8" text="Import" top="120" width="70" height="30" onclick="Button05_onclick" right="75"/>
+        <Button id="Button04" taborder="7" text="Export" top="120" height="30" onclick="Button04_onclick" right="Button05:5" width="70"/>
+        <Button id="Button03" taborder="6" text="저장" top="120" height="30" onclick="Button03_onclick" right="Button04:5" width="70"/>
+        <Button id="Button02" taborder="5" text="삭제" top="120" height="30" onclick="Button02_onclick" right="Button03:5" width="70"/>
+        <Button id="Button01" taborder="4" text="추가" top="120" height="30" onclick="Button01_onclick" width="70" right="Button02:5"/>
+        <Button id="Button00" taborder="2" text="조회" top="120" height="30" onclick="Button00_onclick" width="70" right="Button01:5"/>
+        <Grid id="Grid00" taborder="3" left="75" top="160" binddataset="ds_list" autofittype="col" autoenter="select" right="75" bottom="20">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="28" band="head"/>
+                <Row size="28"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="ID"/>
+                <Cell col="1" text="NAME" displaytype="editcontrol" edittype="normal"/>
+                <Cell col="2" text="DESCRIPTION" displaytype="editcontrol" edittype="normal"/>
+                <Cell col="3" text="USE_YN" displaytype="editcontrol" edittype="normal"/>
+                <Cell col="4" text="REG_USER" displaytype="editcontrol" edittype="normal"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:ID"/>
+                <Cell col="1" text="bind:NAME" edittype="normal" displaytype="editcontrol"/>
+                <Cell col="2" text="bind:DESCRIPTION" edittype="normal" displaytype="editcontrol"/>
+                <Cell col="3" text="bind:USE_YN" edittype="normal" displaytype="editcontrol"/>
+                <Cell col="4" text="bind:REG_USER" edittype="normal" displaytype="editcontrol"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static00" taborder="9" text="uiadapter17 - CRUD" left="33" top="26" width="1214" height="34" font="normal 700 16pt/normal &quot;Arial&quot;"/>
+        <Static id="Static02" taborder="10" text="uiadapter17은 SpringFramework 기반으로 구성된 개발환경에서 넥사크로플랫폼의 입/출력 데이터를 변환 해주는 기능을 지원하는 모듈입니다." left="35" top="60" width="1214" height="30"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_search">
+        <ColumnInfo>
+          <Column id="searchType" type="STRING" size="256"/>
+          <Column id="keyword" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="ID" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+          <Column id="DESCRIPTION" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+          <Column id="REG_USER" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+/************************************************************************
+ * event : 조회 버튼 클릭
+ ************************************************************************/
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fnSearch();
+};
+
+/************************************************************************
+ * event : 추가 버튼 클릭
+ ************************************************************************/
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var nRow = this.ds_list.addRow();
+	this.ds_list.set_rowposition(nRow);
+	this.Grid00.setCellPos(1);
+	this.Grid00.showEditor(true);
+};
+
+/************************************************************************
+ * event : 삭제 버튼 클릭
+ ************************************************************************/
+this.Button02_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var nRow = this.ds_list.rowposition;
+	this.ds_list.deleteRow(nRow);
+};
+
+/************************************************************************
+ * event : 저장 버튼 클릭
+ ************************************************************************/
+this.Button03_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fnSave();
+};
+
+// function : 데이터 조회 트랜잭션
+this.fnSearch = function ()
+{
+	// 조회조건 셋팅
+	this.ds_search.setColumn(0, "searchType", this.Combo00.value);
+	this.ds_search.setColumn(0, "keyword"  , this.Edit00.text);
+	
+	var strSvcId    = "search";
+	var strSvcUrl   = "svc::selectSampleList.do";
+	var inData      = "input1=ds_search";
+	var outData     = "ds_list=output1";
+	var strArg      = "";
+	var callBackFnc = "fnCallback";
+	var isAsync     = true;
+	
+	this.transaction(strSvcId ,     // transaction을 구분하기 위한 svc id값
+		strSvcUrl ,   	// transaction을 요청할 주소
+		inData ,     	// 입력값으로 보낼 dataset id , a=b형태로 실제이름과 입력이름을 매칭
+		outData ,     	// 처리결과값으로 받을 dataset id, a=b형태로 실제이름과 입력이름을 매칭
+		strArg ,     	// 입력값으로 보낼 arguments, a=b
+		callBackFnc ,   // transaction의 결과를 받을 Function 이름
+		isAsync);     	// 비동기통신 여부 [생략가능]
+};
+
+// function : 데이터 저장 트랜잭션
+this.fnSave = function()
+{
+	var strSvcId    = "save";
+	var strSvcUrl   = "svc::updateSampleList.do";
+	var inData      = "input1=ds_list:U";
+	var outData     = "";
+	var strArg      = "";
+	var callBackFnc = "fnCallback";
+	var isAsync     = true;
+	
+	this.transaction(strSvcId ,     // transaction을 구분하기 위한 svc id값
+		strSvcUrl ,   	// trabsaction을 요청할 주소
+		inData ,     	// 입력값으로 보낼 dataset id , a=b형태로 실제이름과 입력이름을 매칭
+		outData ,     	// 처리결과값으로 받을 dataset id, a=b형태로 실제이름과 입력이름을 매칭
+		strArg ,     	// 입력값으로 보낼 arguments, a=b
+		callBackFnc ,   // transaction의 결과를 받을 Function 이름
+		isAsync);     	// 비동기통신 여부 [생략가능]
+};
+
+// function : 처리콜백 함수
+this.fnCallback = function(svcID,errorCode,errorMsg)
+{
+	// 에러 시 화면 처리 내역
+	if(errorCode != 0)
+	{
+		this.alert(errorCode+"\n"+errorMsg);
+		return;
+	}
+	
+	switch(svcID)
+	{
+		case "search":
+			if(this.ds_list.rowcount < 1){
+				this.alert("조회된 결과가 없습니다.");
+			}
+			break;
+			
+		case "save":
+			this.alert("저장 되었습니다");
+			this.fnSearch();
+			
+			break;
+	}
+	
+};
+
+
+
+/************************************************************************ Xeni Excel 관련 ************************************************************************/
+
+// 서버 Xeni Excel 관련 Servlet Mapping 주소
+this.url = "svc::XExportImport.do";
+/*this.url = "http://localhost:8282/sampleuiadapter17/XExportImport.do";*/
+/*this.url = "xeni::XExportImport.do";*/
+// Export에 사용할 ExcelExportObject 변수생성
+this.objExcelExport = null;
+//Import에 사용할 ExcelImportObject 변수생성
+this.objExcelImport = null;
+
+/************************************************************************
+ * event : 화면 로드
+ ************************************************************************/
+this.Form_Work_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	/*
+	 *	xeni export 관련
+	 */
+	// 폼 로딩 후 ExcelExportObject 생성
+	this.objExcelExport = new nexacro.ExcelExportObject("ExcelExportObject00", this);
+	
+	// 생성한 오브젝트에 이벤트 추가
+	this.objExcelExport.addEventHandler("onprogress", this.ExcelExportObject00_onprogress, this);
+	this.objExcelExport.addEventHandler("onsuccess", this.ExcelExportObject00_onsuccess, this);  
+	this.objExcelExport.addEventHandler("onerror", this.ExcelExportObject00_onerror, this); 
+	
+	// ExcelExportObject 의 대상 Grid 및 속성 설정
+	/*this.objExcelExport.addExportItem(nexacro.ExportItemTypes.GRID, this.Grid00, "Sheet1!A1","allband","allrecord", "merge", "allstyle", "none", "none", "width");*/
+	this.objExcelExport.addExportItem(nexacro.ExportItemTypes.GRID, this.Grid00, "Sheet1!A1");
+	this.objExcelExport.set_exportmessageprocess("%d [ %d / %d ]");
+	this.objExcelExport.set_exportuitype("exportprogress");
+	this.objExcelExport.set_exporteventtype("itemrecord");
+	this.objExcelExport.set_exporttype(nexacro.ExportTypes.EXCEL2007);
+	this.objExcelExport.set_exporturl(this.url); 
+	
+	this.addChild("ExcelExportObject00", this.objExcelExport); 
+	
+	/*
+	 *	xeni import 관련
+	 */
+	this.objExcelImport = new nexacro.ExcelImportObject("ExcelImportObject00",this); 
+	//생성한 오브젝트에 이벤트추가
+	this.objExcelImport.addEventHandler("onsuccess" ,this.ExcelImportObject00_onsuccess ,this);
+	this.objExcelImport.addEventHandler("onerror"   ,this.ExcelImportObject00_onerror   ,this);
+	
+	this.objExcelImport.set_importtype(nexacro.ImportTypes.EXCEL2007);
+	this.objExcelImport.set_importurl(this.url);  
+	
+	this.addChild("ExcelImportObject00", this.objExcelImport);
+};
+
+/************************************************************************
+ * event : Export 버튼 클릭
+ ************************************************************************/
+this.Button04_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	// ExcelExport 실행
+	this.objExcelExport.set_exportfilename("ExcelExport_Sample");
+	this.objExcelExport.exportData();
+	/*this.objExcelExport.exportData(["", "input1=ds_list", 0, true]);*/
+};
+
+// function : ExcelExportObject00 객체의 이벤트 onprogress
+this.ExcelExportObject00_onprogress = function(obj:ExportObject, e:nexacro.ExcelExportObject)
+{
+	var str = "";
+
+	str += "\n=========== onprogress event start================";
+	str += "\ne.eventid  :"+e.eventid;
+	str += "\ne.id :"+e.id;
+	str += "\ne.fromobject :"+e.fromobject;
+	str += "\ne.fromreferenceobject  :"+e.fromreferenceobject;
+	str += "\ne.itemindex :"+e.itemindex;
+	str += "\ne.itemtype :"+e.itemtype;
+	str += "\ne.recordindex :"+e.recordindex;  
+
+	trace(str);
+}
+
+// function : ExcelExportObject00 객체의 이벤트 onsuccess
+this.ExcelExportObject00_onsuccess = function(obj:ExportObject, e:nexacro.ExcelExportObject)
+{
+	var str = "";
+	
+	str += "\n=========== onsuccess event start=================";
+	str += "\ne.eventid : " + e.eventid;
+	str += "\ne.url: " +  e.url;  
+	str += "\ne.id :"+e.id;
+	str += "\ne.fromobject :"+e.fromobject;
+	str += "\ne.fromreferenceobject  :"+e.fromreferenceobject;
+	
+	trace(str);
+}
+
+// function : ExcelExportObject00 객체의 이벤트 onerror
+this.ExcelExportObject00_onerror = function(obj:ExportObject, e:nexacro.ExcelExportObject)
+{
+	var str = "";
+
+	str += "\n=========== onerror event start===================";
+	str += "\ne.eventid :"+e.eventid;
+	str += "\ne.id :"+e.id;
+	str += "\ne.fromobject :"+e.fromobject;
+	str += "\ne.fromreferenceobject :"+e.fromreferenceobject;
+	str += "\ne.errorcode :"+e.errorcode;
+	str += "\ne.errormsg :"+e.errormsg;  
+
+	trace(str);
+}
+
+/************************************************************************
+ * event : import 버튼 클릭
+ ************************************************************************/
+this.Button05_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sParam = "[command=getsheetdata;output=outDs;head=sheet1!A1:E1;body=sheet1!A2]";        
+	var sParam2 = "[ds_list=outDs]";
+	
+	this.objExcelImport.importData("", sParam, sParam2);
+};
+
+//Import 성공시
+this.ExcelImportObject00_onsuccess = function(obj:ImportObject, e:nexacro.ExcelImportObject)
+{   
+  trace(e.url);
+  trace(this.ds_list.saveXML());
+};
+
+//Import 에러시
+this.ExcelImportObject00_onerror = function(obj:ImportObject, e:nexacro.ExcelImportObject)
+{
+    alert("업로드 실패");
+    trace("=========== onerror event start============");
+    trace("e.eventid:    "          + e.eventid);
+    trace("e.fromobject: "          + e.fromobject);
+    trace("e.fromreferenceobject: " + e.fromreferenceobject);
+    trace("e.errorcode: "           + e.errorcode);
+    trace("e.errormsg: "            + e.errormsg);
+};
+]]></Script>
+  </Form>
+</FDL>
