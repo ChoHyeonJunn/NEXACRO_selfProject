@@ -2,6 +2,10 @@
 
 ### 넥사크로&amp;전자정부프레임워크 를 활용한 프로젝트
 
++ self_project - NexacroPlatform 을 이용해 만든 front-end (소스 활용을 위해 Nexacro Studio 툴이 필요합니다.[넥사크로 서포트 홈페이지](http://support.tobesoft.co.kr/Support/index.html))
++ self_project_div - div를 이용한 화면분할 코드입니다. (소스 활용을 위해 Nexacro Studio 툴이 필요합니다.[넥사크로 서포트 홈페이지](http://support.tobesoft.co.kr/Support/index.html))
++ uiadapter17_selfProject - 전자정부프레임워크를 이용해 만든 WAS
+
 ### 위 프로젝트의 WAS(Web Application Server)설정및 CRUD, Xeni Export Import, File Up/Download 기능은 아래 링크 ([Play Nexacro](https://www.playnexacro.com/#) : Nexacro Platform 커뮤니티) 에 게시된 과정을 참조하였습니다.
 ### 이 과정에 대한 소스는 [NEXACRO_UIAdapter17](https://github.com/ChoHyeonJunn/NEXACRO_UIAdapter17) 깃 소스를 통해 별도로 다운로드 가능합니다.
 
