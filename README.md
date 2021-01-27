@@ -1,5 +1,5 @@
 # NEXACRO_selfProject
-<img src="https://user-images.githubusercontent.com/53424490/105945432-9b3a6600-60a8-11eb-9e1c-a39b4fe38dc6.PNG" width="40%" height="20%">
+
 ### 넥사크로&amp;전자정부프레임워크 를 활용한 프로젝트
 
 ### 위 프로젝트의 WAS(Web Application Server)설정및 CRUD, Xeni Export Import, File Up/Download 기능은 아래 링크 ([Play Nexacro](https://www.playnexacro.com/#) : Nexacro Platform 커뮤니티) 에 게시된 과정을 참조하였습니다.
@@ -23,22 +23,22 @@
 + 로그인 페이지 구현 (session check 구현 X)
 + Nexacro MDI Frame 구현
 + Nexacro 소계 표현 Grid &amp; Tree Grid
-![self_project_Grid](https://user-images.githubusercontent.com/53424490/105945029-cff9ed80-60a7-11eb-9f68-55db80a28efc.PNG){: width="100" height="100"}
+<img src="https://user-images.githubusercontent.com/53424490/105945029-cff9ed80-60a7-11eb-9f68-55db80a28efc.PNG" width="60%" height="30%">
 
 + Nexacro Grid Pagination
-![self_project_pagination](https://user-images.githubusercontent.com/53424490/105945106-f586f700-60a7-11eb-9b2d-6d642924238f.PNG)
+<img src="https://user-images.githubusercontent.com/53424490/105945106-f586f700-60a7-11eb-9b2d-6d642924238f.PNG" width="60%" height="30%">
 
 + Nexacro Personalization
-![self_project_personalization](https://user-images.githubusercontent.com/53424490/105945168-17807980-60a8-11eb-972d-161d00d19642.PNG)
+<img src="https://user-images.githubusercontent.com/53424490/105945168-17807980-60a8-11eb-972d-161d00d19642.PNG" width="60%" height="30%">
 
 + Nexacro Popup Div
-![self_project_popupdiv](https://user-images.githubusercontent.com/53424490/105945219-37b03880-60a8-11eb-81a4-03c8852c4ca5.PNG)
+<img src="https://user-images.githubusercontent.com/53424490/105945219-37b03880-60a8-11eb-81a4-03c8852c4ca5.PNG" width="60%" height="30%">
 
 + rChart 연동하기 [RiaMore Soft](http://www.riamore.net/)
-![self_project_rchart](https://user-images.githubusercontent.com/53424490/105945432-9b3a6600-60a8-11eb-9e1c-a39b4fe38dc6.PNG)
+<img src="https://user-images.githubusercontent.com/53424490/105945432-9b3a6600-60a8-11eb-9e1c-a39b4fe38dc6.PNG" width="60%" height="30%">
 
 + Nexacro DataSet rChart 적용하기
-![self_project_ChartGrid](https://user-images.githubusercontent.com/53424490/105944778-582bc300-60a7-11eb-9c9d-c1b9a9879c01.png)
+<img src="https://user-images.githubusercontent.com/53424490/105944778-582bc300-60a7-11eb-9c9d-c1b9a9879c01.png" width="60%" height="30%">
 
 + Nexacro Module Developer From To Calendar
-![self_project_fromtocalendar](https://user-images.githubusercontent.com/53424490/105945341-75ad5c80-60a8-11eb-829b-f284e600890c.png)
+<img src="https://user-images.githubusercontent.com/53424490/105945341-75ad5c80-60a8-11eb-829b-f284e600890c.png" width="60%" height="30%">
