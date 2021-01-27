@@ -46,3 +46,10 @@
 
 + Nexacro Module Developer From To Calendar
 <img src="https://user-images.githubusercontent.com/53424490/105945341-75ad5c80-60a8-11eb-829b-f284e600890c.png" width="60%" height="30%">
+
+
+###[참조]
++ [playnexacro](https://www.playnexacro.com/#)
++ [tobesoft development guide](http://docs.tobesoft.com/development_tools_guide_nexacro_17_ko)
++ [nexacro demo](http://demo.nexacroplatform.com/nexacro17-demo/ui/index.html)
++ [nexacro showcase](http://support.tobesoft.co.kr/Next_JSP/nexacro17_deploy/Showcase/launch.html)
