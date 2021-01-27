@@ -27,5 +27,7 @@
 + Nexacro Personalization
 + Nexacro Popup Div
 + rChart 연동하기 [RiaMore Soft](http://www.riamore.net/)
+![self_project_ChartGrid](https://user-images.githubusercontent.com/53424490/105944778-582bc300-60a7-11eb-9c9d-c1b9a9879c01.png)
+
 + Nexacro DataSet rChart 적용하기
 + Nexacro Module Developer From To Calendar
