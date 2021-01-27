@@ -1,5 +1,5 @@
 # NEXACRO_selfProject
-
+<img src="https://user-images.githubusercontent.com/53424490/105945432-9b3a6600-60a8-11eb-9e1c-a39b4fe38dc6.PNG" width="40%" height="20%">
 ### 넥사크로&amp;전자정부프레임워크 를 활용한 프로젝트
 
 ### 위 프로젝트의 WAS(Web Application Server)설정및 CRUD, Xeni Export Import, File Up/Download 기능은 아래 링크 ([Play Nexacro](https://www.playnexacro.com/#) : Nexacro Platform 커뮤니티) 에 게시된 과정을 참조하였습니다.
