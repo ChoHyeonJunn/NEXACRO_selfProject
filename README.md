@@ -20,7 +20,12 @@
 
 
 ### 이외에 구현된 기능은 다음과 같습니다.
-+ rChart 연동하기 [RiaMore Soft](http://www.riamore.net/)
++ 로그인 페이지 구현 (session check 구현 X)
++ Nexacro MDI Frame 구현
++ Nexacro 소계 표현 Grid &amp; Tree Grid
 + Nexacro Grid Pagination
 + Nexacro Personalization
++ Nexacro Popup Div
++ rChart 연동하기 [RiaMore Soft](http://www.riamore.net/)
++ Nexacro DataSet rChart 적용하기
 + Nexacro Module Developer From To Calendar
